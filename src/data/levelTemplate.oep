@@ -1,0 +1,24 @@
+<project>
+	<name>Escape</name>
+	<settings>
+		<defaultWidth>480</defaultWidth>
+		<defaultHeight>320</defaultHeight>
+	</settings>
+	
+	<objects>
+		<object name="wall" image="wall.png" width="32" height="32" />
+		<object name="start" image="start.png" width="32" height="32" />
+		<object name="end" image="end.png" width="32" height="32" />
+		<object name="spider" image="spider.png" width="32" height="32" />
+		<object name="cyclope" image="cyclope.png" width="32" height="32" />
+		<object name="blob" image="blob.png" width="32" height="32" />
+		<object name="goblin" image="goblin.png" width="32" height="32" />
+		<object name="redPotion" image="redPotion.png" width="32" height="32" />
+		<object name="glass" image="glass.png" width="32" height="32" />		
+		<object name="pit" image="pit.png" width="32" height="32" />		
+	</objects>
+	
+	<layers>
+		<objects name="objects" gridSize="32"/>
+	</layers>
+</project>
