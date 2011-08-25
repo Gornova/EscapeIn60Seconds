@@ -3,6 +3,7 @@ package
 	import net.flashpunk.Entity;
 	import net.flashpunk.FP;
 	import net.flashpunk.Graphic;
+	import net.flashpunk.graphics.Image;
 	import net.flashpunk.tweens.misc.Alarm;
 	import net.flashpunk.graphics.Graphiclist;
 
@@ -19,6 +20,8 @@ package
 		private var life:int;
 		
 		private var g:Graphic;
+		
+		private var imgNextMove:Image = new Image(Global.classNextMove);
 		
 		public function Enemy(x:int, y:int, life:int, graphic:Graphic) 
 		{
@@ -102,25 +105,9 @@ package
 				FP.world.remove(this);
 				return;
 			}
-			
 			(graphic as Graphiclist).removeAll();
 			(graphic as Graphiclist).add(g);
 			(graphic as Graphiclist).add(Global.getbar(life));
-			
-			//if (Global.life == 3) {
-				//(graphic as Graphiclist).add(Global.imgBar3);
-			//}
-			//if (Global.life == 2) {
-				//(graphic as Graphiclist).add(Global.imgBar2);
-			//}
-			//if (Global.life == 1) {
-				//(graphic as Graphiclist).add(Global.imgBar1);
-			//}
-			//if (Global.life == 0) {
-				//(graphic as Graphiclist).add(Global.imgBar0);
-			//}
-			
-			
 		}		
 	}
 

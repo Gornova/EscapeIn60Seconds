@@ -4,6 +4,9 @@ package
 	import net.flashpunk.FP;
 	import net.flashpunk.graphics.Graphiclist;
 	import net.flashpunk.graphics.Image;
+	import net.flashpunk.Tween;
+	import net.flashpunk.tweens.misc.NumTween;
+	import net.flashpunk.tweens.misc.VarTween;
 	import net.flashpunk.utils.*;
 
 	public class Player extends Entity
@@ -16,6 +19,8 @@ package
 		
 		private var prevx:int;
 		private var prevy:int;
+		
+		private var move:Tween;
 		
 		public function Player(x:int, y:int) 
 		{

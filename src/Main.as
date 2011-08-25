@@ -49,9 +49,11 @@ package
 			//FP.console.toggleKey = Key.BACKSPACE;
 			//FP.world = new MenuWorld();
 			
-			var s:Splash = new Splash;
-			FP.world.add(s);
-			s.start(splashComplete);
+			//var s:Splash = new Splash;
+			//FP.world.add(s);
+			//s.start(splashComplete);
+			
+			FP.world = new GameWorld();
 		}
 		
 		public function splashComplete():void

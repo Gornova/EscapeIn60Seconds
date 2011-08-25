@@ -85,6 +85,9 @@ package
 		public static const classTimeBack:Class;				
 		public static var imgTimeBack = new Image(Global.classTimeBack);
 		
+		[Embed(source = 'data/nextMove.png')]
+		public static var classNextMove :Class;				
+		
 		/** Sounds **/
 		[Embed(source="/data/redPotion.mp3")]
 		public static var classPotion:Class;		
