@@ -20,7 +20,11 @@ package
 		private var prevx:int;
 		private var prevy:int;
 		
-		private var move:Tween;
+		private var move:Boolean;
+		
+		private var moveRight:Boolean;
+		
+		private var xcount:int = 0;
 		
 		public function Player(x:int, y:int) 
 		{
@@ -31,6 +35,8 @@ package
 			setHitbox(32, 32);
 			type = Global.PLAYER;
 			
+			
+			
 			Input.define(RIGHT, Key.RIGHT, Key.D);
 			Input.define(LEFT, Key.LEFT, Key.A);
 			Input.define(UP, Key.UP, Key.W);
@@ -39,45 +45,43 @@ package
 		}
 		
 		override public function update():void {
-			super.update();
-			
 			var moved:Boolean = false;
 			
 			prevx = x;
-			prevy = y;
-			
-			if (Input.pressed(RIGHT)) {
-				if (x+32 < Global.width){
-					moveBy(32, 0, Global.WALL);
+			prevy = y;			
+
+			if (Input.check(RIGHT)) {
+				if (x+32 < Global.width && !collide(Global.WALL,x+2,y)){
+					x = x +2;
 					moved = true;
 				}
-			}
+			}	
 			
-			if (Input.pressed(LEFT)) {
-				if (x-32 >= 0){
-					moveBy( -32, 0, Global.WALL);
+			if (Input.check(LEFT)) {
+				if (x+32 < Global.width && !collide(Global.WALL,x-2,y)){
+					x = x - 2;
 					moved = true;					
 				}
+			}				
+			
+			if (Input.check(UP)) {
+				if (y-32 < Global.width && !collide(Global.WALL,x,y-2)){
+					y = y -2;
+					moved = true;					
+				}			
 			}
 
-			if (Input.pressed(UP)) {
-				if (y-32 >= 0){
-					moveBy(0, -32, Global.WALL);
+			if (Input.check(DOWN)) {
+				if (y+32 < Global.width && !collide(Global.WALL,x,y+2)){
+					y = y +2;
 					moved = true;					
-				}
-			}
-
-			if (Input.pressed(DOWN)) {
-				if (y+32 < Global.height){
-					moveBy(0, 32, Global.WALL);
-					moved = true;					
-				}
-			}
+				}			
+			}	
 			
 			if (moved) {
 				Global.moves++;
-				Global.playSndStep();
-			}
+				//Global.playSndStep();
+			}			
 		}
 		
 		public function back():void {

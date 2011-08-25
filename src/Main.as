@@ -45,8 +45,8 @@ package
 		
 		override public function init():void 
 		{
-			//FP.console.enable();
-			//FP.console.toggleKey = Key.BACKSPACE;
+			FP.console.enable();
+			FP.console.toggleKey = Key.SPACE;
 			//FP.world = new MenuWorld();
 			
 			//var s:Splash = new Splash;
